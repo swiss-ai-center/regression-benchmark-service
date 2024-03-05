@@ -68,7 +68,7 @@ class MyService(Service):
 
     def process(self, data):
 
-        raw = str(data["dataset"].data)
+        raw = str(data["dataset"].data.decode("utf-8-sig").encode("utf-8"))
         raw = (
             raw.replace(",", ";")
             .replace("\\n", "\n")
